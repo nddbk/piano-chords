@@ -1,0 +1,51 @@
+{
+  "version": "0.0.1",
+  "name": "piano-chords",
+  "description": "To get the piano chords",
+  "homepage": "https://chrome.google.com/webstore/detail/fasttyping/dgibeimfinglbfgimhiffmflgimlfffl",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndaidong/piano-chords"
+  },
+  "author": "@ndaidong",
+  "main": "./index.js",
+  "engines": {
+    "node": ">= 8.0"
+  },
+  "scripts": {
+    "setup": "node scripts/setup",
+    "start": "http-server src -p 8081 -o",
+    "lint": "eslint src/js scripts",
+    "nsp": "nsp check --output checkstyle",
+    "test": "npm run lint && npm run nsp",
+    "release": "npm test && node scripts/release",
+    "reset": "node reset"
+  },
+  "devDependencies": {
+    "eslint": "4.x.x",
+    "eslint-config-ggc": "1.x.x",
+    "http-server": "0.x.x",
+    "mkdirp": "0.x.x",
+    "nsp": "2.x.x"
+  },
+  "keywords": [
+    "chrome",
+    "offline",
+    "extension",
+    "apps",
+    "piano",
+    "chords",
+    "music",
+    "scale"
+  ],
+  "builder": {
+    "vendorDir": "src/vendor",
+    "css": {},
+    "javascript": {
+      "realdom": "https://rawgit.com/ndaidong/realdom/master/dist/realdom.js",
+      "tones": "https://raw.githubusercontent.com/bit101/tones/master/tones.js",
+      "vue": "https://vuejs.org/js/vue.min.js"
+    }
+  },
+  "license": "MIT"
+}
