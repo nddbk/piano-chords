@@ -97,9 +97,14 @@ body{
   background-color: #3f3;
   box-shadow: 0px 0px 0px #333;
 }
+.octave .key.highlight {
+  background-color: #af9;
+}
+
+.octave .key.highlight.active,
 .octave .key.black.active,
 .octave .key.black:active {
-  background-color: #6f6;
+  background-color: #ae2;
   border: inset 1px #eee;
   box-shadow: 0px 0px 0px #eee;
 }
@@ -113,13 +118,44 @@ body{
 }
 
 .info-board .left {
-  width: 150px;
+  width: 200px;
 }
 .info-board .center {
   flex-grow: 1;
-  background-color: yellow;
 }
 .info-board .right {
   width: 100px;
 }
 
+select {
+  padding: 10px 5px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+select.big {
+  color: #00f;
+  padding: 10px;
+  font-weight: 800;
+}
+
+.chord-btn {
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50%;
+  line-height: 40px;
+  width: 60px;
+  margin: 5px 5px;
+  font-weight: 800;
+  font-size: 18px;
+  color: #009;
+  background-color: #ff9;
+  user-select: none;
+}
+
+.chord-btn:hover,
+.chord-btn.active {
+  color: #908;
+  background-color: #af9;
+}

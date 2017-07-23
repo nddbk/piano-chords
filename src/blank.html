@@ -50,10 +50,14 @@
       </div>
       <div class="card info-board">
         <div class="left">
-          
+          <select class="big" id="scaleList"></select>
+          <select id="scaleType">
+            <option value="major">Major</option>
+            <option value="minor">Minor</option>
+          </select>
         </div>
         <div class="center">
-          
+          <span id="chordList"></span>
         </div>
         <div class="right">
           <span class="play"></span>
@@ -64,6 +68,8 @@
     <script type="text/javascript" src="vendor/js/vue.js"></script>
     <script type="text/javascript" src="vendor/js/realdom.js"></script>
     <script type="text/javascript" src="vendor/js/tones.js"></script>
+    <script type="text/javascript" src="js/services/chord.js"></script>
+    <script type="text/javascript" src="js/services/scale.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
