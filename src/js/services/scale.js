@@ -3,6 +3,10 @@
 
 (() => {
 
+  var {
+    clone
+  } = bella;
+
   var scales = [
     {
       root: 'c',
@@ -61,7 +65,7 @@
   });
 
   var getChordAfter = (v, inc = 0) => {
-    let arr = [...scales];
+    let arr = clone(scales);
     let t = v + inc;
     if (t >= arr.length) {
       let k = t - arr.length;
@@ -71,7 +75,7 @@
   };
 
   var getChordBefore = (v, inc = 0) => {
-    let arr = [...scales];
+    let arr = clone(scales);
     let t = v - inc;
     if (t < 0) {
       let k = arr.length + t;
@@ -80,16 +84,23 @@
     return arr[t];
   };
 
+  var makeAsMinor = (item) => {
+    if (item.type !== 'minor') {
+      item.type = 'minor';
+      let {
+        name
+      } = item;
+      item.name = `${name}m`;
+    }
+    return item;
+  };
+
   var getMinorChords = (v) => {
     return [
       getChordAfter(v, 2),
       getChordAfter(v, 3),
       getChordAfter(v, 4)
-    ].map((item) => {
-      item.type = 'minor';
-      item.name += 'm';
-      return item;
-    });
+    ].map(makeAsMinor);
   };
 
   var getMajorChords = (v) => {
@@ -104,7 +115,7 @@
   };
 
   var findChords = (v, t = 'major') => {
-    let arr = [...scales];
+    let arr = clone(scales);
 
     let main = arr[v];
 
@@ -128,10 +139,7 @@
         return item;
       }).concat(getMinorChords(v));
     } else if (t === 'minor') {
-      output = output.map((item) => {
-        item.type = 'minor';
-        return item;
-      }).concat(getMajorChords(v));
+      output = output.map(makeAsMinor).concat(getMajorChords(v));
     }
 
     return output;
@@ -139,7 +147,7 @@
 
   window.Scale = {
     all: () => {
-      return [...scales];
+      return clone(scales);
     },
     findChords
   };

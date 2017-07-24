@@ -1,7 +1,7 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.3",
   "name": "piano-chords",
-  "description": "To get the piano chords",
+  "description": "Simple tool for determining piano chords",
   "homepage": "https://chrome.google.com/webstore/detail/fasttyping/dgibeimfinglbfgimhiffmflgimlfffl",
   "repository": {
     "type": "git",
@@ -18,15 +18,24 @@
     "lint": "eslint src/js scripts",
     "nsp": "nsp check --output checkstyle",
     "test": "npm run lint && npm run nsp",
-    "release": "npm test && node scripts/release",
+    "release": "node scripts/release",
+    "build": "node scripts/build",
     "reset": "node reset"
   },
   "devDependencies": {
+    "babel-core": "6.x.x",
+    "babel-plugin-transform-remove-strict-mode": "0.x.x",
+    "babel-preset-es2015": "6.x.x",
+    "bellajs": "7.x.x",
+    "cheerio": "1.0.0-rc.2",
     "eslint": "4.x.x",
     "eslint-config-ggc": "1.x.x",
+    "html-minifier": "3.x.x",
     "http-server": "0.x.x",
+    "minimist": "1.x.x",
     "mkdirp": "0.x.x",
-    "nsp": "2.x.x"
+    "nsp": "2.x.x",
+    "uglify-js": "3.x.x"
   },
   "keywords": [
     "chrome",
@@ -42,9 +51,9 @@
     "vendorDir": "src/vendor",
     "css": {},
     "javascript": {
-      "realdom": "https://rawgit.com/ndaidong/realdom/master/dist/realdom.js",
-      "tones": "https://raw.githubusercontent.com/bit101/tones/master/tones.js",
-      "vue": "https://vuejs.org/js/vue.min.js"
+      "bella": "https://cdn.rawgit.com/ndaidong/bellajs/master/dist/bella.min.js",
+      "realdom": "https://rawgit.com/ndaidong/realdom/master/dist/realdom.min.js",
+      "tones": "https://raw.githubusercontent.com/bit101/tones/master/tones.js"
     }
   },
   "license": "MIT"

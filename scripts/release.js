@@ -4,6 +4,8 @@ var fs = require('fs');
 var exec = require('child_process').execSync;
 var mkdirp = require('mkdirp').sync;
 
+var compile = require('./compile');
+
 var updateVersion = (file, version) => {
   let manifest = fs.readFileSync(file, 'utf8');
   let json = JSON.parse(manifest);
@@ -26,6 +28,8 @@ var release = () => {
   exec(`cp -R src ${dest}`);
 
   updateVersion(`${dest}/manifest.json`, version);
+
+  compile(`${dest}/blank.html`, dest);
 };
 
 release();

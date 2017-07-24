@@ -95,13 +95,8 @@
 
       let c = Chord.build(note, type);
 
-      span.onmouseover = () => {
-        c.activate();
-      };
-
-      span.onmouseout = () => {
-        c.desactivate();
-      };
+      span.onmouseover = c.activate;
+      span.onmouseout = c.desactivate;
 
       span.onclick = () => {
         c.play(0);
