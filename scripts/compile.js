@@ -87,7 +87,7 @@ var compile = (htmlFile, dist) => {
     useShortDoctype: true
   });
   writeFile(htmlFile, html);
-  writeFile(htmlFile.replace('blank.html', 'index.htm'), html);
+  writeFile(htmlFile.replace('blank.html', 'index.html'), html);
 };
 
 module.exports = compile;
