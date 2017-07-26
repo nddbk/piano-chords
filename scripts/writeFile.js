@@ -1,4 +1,4 @@
-// builder/writeFile
+// scripts/writeFile
 
 var fs = require('fs');
 

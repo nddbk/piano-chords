@@ -10,6 +10,8 @@ var exec = require('child_process').execSync;
 var dirs = [
   'dist',
   'docs',
+  'src/vendor',
+  'releases',
   '.nyc_output',
   'coverage',
   'node_modules'

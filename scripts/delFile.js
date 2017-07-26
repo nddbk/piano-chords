@@ -1,4 +1,4 @@
-// builder/delFile
+// scripts/delFile
 
 var fs = require('fs');
 

@@ -2,7 +2,7 @@
   "version": "0.0.3",
   "name": "piano-chords",
   "description": "Simple tool for determining piano chords",
-  "homepage": "https://chrome.google.com/webstore/detail/fasttyping/dgibeimfinglbfgimhiffmflgimlfffl",
+  "homepage": "https://techpush.github.io/piano-chords",
   "repository": {
     "type": "git",
     "url": "https://github.com/ndaidong/piano-chords"
@@ -18,7 +18,6 @@
     "lint": "eslint src/js scripts",
     "nsp": "nsp check --output checkstyle",
     "test": "npm run lint && npm run nsp",
-    "release": "node scripts/release",
     "build": "node scripts/build",
     "reset": "node reset"
   },
@@ -28,6 +27,8 @@
     "babel-preset-es2015": "6.x.x",
     "bellajs": "7.x.x",
     "cheerio": "1.0.0-rc.2",
+    "css-mqpacker": "6.x.x",
+    "cssnano": "3.x.x",
     "eslint": "4.x.x",
     "eslint-config-ggc": "1.x.x",
     "html-minifier": "3.x.x",
@@ -35,6 +36,10 @@
     "minimist": "1.x.x",
     "mkdirp": "0.x.x",
     "nsp": "2.x.x",
+    "postcss": "6.x.x",
+    "postcss-cssnext": "2.x.x",
+    "postcss-filter-plugins": "2.x.x",
+    "postcss-nested": "2.x.x",
     "uglify-js": "3.x.x"
   },
   "keywords": [

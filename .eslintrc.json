@@ -2,11 +2,7 @@
   "extends": "eslint-config-ggc",
   "globals": {
     "bella": true,
-    "Box": true,
-    "chrome": true,
-    "realdom": true,
-    "stabilize": true,
-    "txtgen": true
+    "realdom": true
   },
   "rules": {
     "max-nested-callbacks": 0,

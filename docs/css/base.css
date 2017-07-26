@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html, body {
   padding: 0;
@@ -11,36 +12,21 @@ html, body {
   font-display: optional;
   color: #444;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+}
 
 html {
   overflow: hidden; }
 
 body {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-align-content: stretch;
-      -ms-flex-line-pack: stretch;
-          align-content: stretch;
-  background: #ececec; }
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  background: #ececec;
+}
 
 .header {
   width: 100%;
@@ -52,50 +38,18 @@ body {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 2px 9px 1px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
   padding: 16px 16px 0 16px;
   will-change: transform;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-align-content: center;
-      -ms-flex-line-pack: center;
-          align-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
   -webkit-transition: -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
   transition: -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
   transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
   transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s, -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
-  z-index: 1000; }
-  .header .headerButton {
-    width: 24px;
-    height: 24px;
-    margin-right: 16px;
-    text-indent: -30000px;
-    overflow: hidden;
-    opacity: 0.54;
-    -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
-    transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
-    border: none;
-    outline: none;
-    cursor: pointer; }
-  .header #butRefresh {
-    background: url(/images/ic_refresh_white_24px.svg) center center no-repeat; }
-  .header #butAdd {
-    background: url(/images/ic_add_white_24px.svg) center center no-repeat; }
+  z-index: 1000;
+}
 
 .header__title {
   font-weight: 400;
@@ -110,70 +64,73 @@ body {
   left: 50%;
   top: 50%;
   position: fixed;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+}
   .loader #spinner {
     box-sizing: border-box;
     stroke: #673AB7;
     stroke-width: 3px;
-    -webkit-transform-origin: 50%;
-            transform-origin: 50%;
-    -webkit-animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
-            animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite; }
+    transform-origin: 50%;
+    animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
+  }
 
 @-webkit-keyframes rotate {
   from {
-    -webkit-transform: rotate(0);
-            transform: rotate(0); }
+    transform: rotate(0);
+  }
   to {
-    -webkit-transform: rotate(450deg);
-            transform: rotate(450deg); } }
+    transform: rotate(450deg);
+  }
+}
 
 @keyframes rotate {
   from {
-    -webkit-transform: rotate(0);
-            transform: rotate(0); }
+    transform: rotate(0);
+  }
   to {
-    -webkit-transform: rotate(450deg);
-            transform: rotate(450deg); } }
+    transform: rotate(450deg);
+  }
+}
 
 @-webkit-keyframes line {
   0% {
     stroke-dasharray: 2, 85.964;
-    -webkit-transform: rotate(0);
-            transform: rotate(0); }
+    transform: rotate(0);
+  }
   50% {
     stroke-dasharray: 65.973, 21.9911;
-    stroke-dashoffset: 0; }
+    stroke-dashoffset: 0;
+  }
   100% {
     stroke-dasharray: 2, 85.964;
     stroke-dashoffset: -65.973;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg); } }
+    transform: rotate(90deg);
+  }
+}
 
 @keyframes line {
   0% {
     stroke-dasharray: 2, 85.964;
-    -webkit-transform: rotate(0);
-            transform: rotate(0); }
+    transform: rotate(0);
+  }
   50% {
     stroke-dasharray: 65.973, 21.9911;
-    stroke-dashoffset: 0; }
+    stroke-dashoffset: 0;
+  }
   100% {
     stroke-dasharray: 2, 85.964;
     stroke-dashoffset: -65.973;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg); } }
+    transform: rotate(90deg);
+  }
+}
 
 .main {
   padding-top: 60px;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+}
 
 .dialog-container {
   background: rgba(0, 0, 0, 0.57);
@@ -185,12 +142,13 @@ body {
   opacity: 0;
   pointer-events: none;
   will-change: opacity;
-  -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
-  transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1); }
+  transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+}
 
 .dialog-container--visible {
   opacity: 1;
-  pointer-events: auto; }
+  pointer-events: auto;
+}
 
 .dialog {
   background: #FFF;
@@ -200,31 +158,35 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%) translateY(30px);
-          transform: translate(-50%, -50%) translateY(30px);
-  -webkit-transition: -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
+  transform: translate(-50%, -50%) translateY(30px);
   transition: -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
   transition: transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
-  transition: transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s, -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s; }
+  transition: transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s, -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
+}
 
 .dialog > div {
   padding-left: 24px;
-  padding-right: 24px; }
+  padding-right: 24px;
+}
 
 .dialog-title {
   padding-top: 20px;
-  font-size: 1.25em; }
+  font-size: 1.25em;
+}
 
 .dialog-body {
   padding-top: 20px;
-  padding-bottom: 24px; }
+  padding-bottom: 24px;
+}
   .dialog-body select {
     width: 100%;
-    font-size: 2em; }
+    font-size: 2em;
+  }
 
 .dialog-buttons {
   padding: 8px !important;
-  float: right; }
+  float: right;
+}
 
 .card {
   padding: 16px;
@@ -233,7 +195,8 @@ body {
   background: #fff;
   border-radius: 2px;
   margin: 16px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
 
 .mdl-button {
   background: transparent;
@@ -254,34 +217,43 @@ body {
   letter-spacing: 0;
   overflow: hidden;
   will-change: box-shadow;
-  -webkit-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
   line-height: 36px;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
   .mdl-button::-moz-focus-inner {
-    border: 0; }
+    border: 0;
+  }
   .mdl-button:hover {
-    background-color: rgba(158, 158, 158, 0.2); }
+    background-color: rgba(158, 158, 158, 0.2);
+  }
   .mdl-button:focus:not(:active) {
-    background-color: rgba(0, 0, 0, 0.12); }
+    background-color: rgba(0, 0, 0, 0.12);
+  }
   .mdl-button:active {
-    background-color: rgba(158, 158, 158, 0.4); }
+    background-color: rgba(158, 158, 158, 0.4);
+  }
   .mdl-button.mdl-button--colored {
-    color: #3f51b5; }
+    color: #3f51b5;
+  }
     .mdl-button.mdl-button--colored:focus:not(:active) {
-      background-color: rgba(0, 0, 0, 0.12); }
+      background-color: rgba(0, 0, 0, 0.12);
+    }
 
 .mdl-button--primary.mdl-button--primary {
-  color: #3f51b5; }
+  color: #3f51b5;
+}
   .mdl-button--primary.mdl-button--primary .mdl-ripple {
-    background: white; }
+    background: white;
+  }
   .mdl-button--primary.mdl-button--primary.mdl-button--raised, .mdl-button--primary.mdl-button--primary.mdl-button--fab {
     color: white;
-    background-color: #3f51b5; }
+    background-color: #3f51b5;
+  }
 
 @font-face {
   font-family: 'Material Icons';
