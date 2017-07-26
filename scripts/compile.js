@@ -10,8 +10,10 @@ var htmlmin = require('html-minifier').minify;
 var readFile = require('./readFile');
 var writeFile = require('./writeFile');
 
-var isVendorJS = (url) => {
-  return url.includes('vendor/js/');
+var postify = require('./postify');
+
+var isVendorSource = (url) => {
+  return url.includes('vendor/');
 };
 
 var transpile = (code) => {
@@ -27,7 +29,7 @@ var jsminify = (source = '') => {
   return minify(source, {sourceMap: true});
 };
 
-var compile = (htmlFile, dist) => {
+var compile = async (htmlFile, dist) => {
 
   let revision = bella.createId();
 
@@ -35,15 +37,31 @@ var compile = (htmlFile, dist) => {
   let $ = cheerio.load(sHtml, {
     normalizeWhitespace: true
   });
+
+  let vendorCSS = [];
   let cssFiles = [];
   $('link[rel="stylesheet"]').each((i, elem) => {
     let ofile = $(elem).attr('href');
-    cssFiles.push(`${dist}/${ofile}`);
+    if (isVendorSource(ofile)) {
+      vendorCSS.push(`${dist}/${ofile}`);
+    } else {
+      cssFiles.push(`${dist}/${ofile}`);
+    }
     $(elem).remove();
   });
-  let css = cssFiles.map((file) => {
+
+  let css3 = vendorCSS.map((file) => {
     return readFile(file);
   }).join('\n');
+
+  let cssNext = cssFiles.map((file) => {
+    return readFile(file);
+  }).join('\n');
+
+  let cssX = await postify(cssNext);
+
+  let css = [css3, cssX].join('\n');
+
   let cssFile = `${dist}/css/main.css`;
   writeFile(cssFile, css);
   let styleTag = `<link rel="stylesheet" type="text/css" href="css/main.css?rev=${revision}" />`;
@@ -53,7 +71,7 @@ var compile = (htmlFile, dist) => {
   let jsFiles = [];
   $('script[type="text/javascript"]').each((i, elem) => {
     let ofile = $(elem).attr('src');
-    if (isVendorJS(ofile)) {
+    if (isVendorSource(ofile)) {
       vendorJS.push(`${dist}/${ofile}`);
     } else {
       jsFiles.push(`${dist}/${ofile}`);
@@ -87,7 +105,6 @@ var compile = (htmlFile, dist) => {
     useShortDoctype: true
   });
   writeFile(htmlFile, html);
-  writeFile(htmlFile.replace('blank.html', 'index.html'), html);
 };
 
 module.exports = compile;
