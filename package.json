@@ -21,7 +21,7 @@
     "tape": "tape test/start.js | tap-spec",
     "test": "npm run tape",
     "testcafe": "testcafe nightmare test/e2e",
-    "build": "npm test && node scripts/build",
+    "build": "node scripts/build",
     "reset": "node reset"
   },
   "devDependencies": {
@@ -40,13 +40,13 @@
     "mkdirp": "0.x.x",
     "nsp": "2.x.x",
     "postcss": "6.x.x",
-    "postcss-cssnext": "2.x.x",
+    "postcss-cssnext": "3.x.x",
     "postcss-filter-plugins": "2.x.x",
     "postcss-nested": "2.x.x",
     "supertest": "3.x.x",
     "tap-spec": "4.x.x",
     "tape": "4.x.x",
-    "testcafe": "0.x.x",
+    "testcafe": "latest",
     "testcafe-browser-provider-nightmare": "0.x.x",
     "uglify-js": "3.x.x"
   },

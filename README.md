@@ -1,6 +1,10 @@
 # piano-chords
 Simple tool for determining piano chords based on given scale.
 
+[![Build Status](https://travis-ci.org/techpush/piano-chords.svg?branch=master)](https://travis-ci.org/techpush/piano-chords)
+[![Dependency Status](https://gemnasium.com/badges/github.com/techpush/piano-chords.svg)](https://gemnasium.com/github.com/techpush/piano-chords)
+[![NSP Status](https://nodesecurity.io/orgs/techpush/projects/05ec91b5-88b3-49e6-b0d4-ddf9f1c0aeae/badge)](https://nodesecurity.io/orgs/techpush/projects/05ec91b5-88b3-49e6-b0d4-ddf9f1c0aeae)
+
 
 ## Install & Build
 
