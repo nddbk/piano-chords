@@ -10,8 +10,16 @@ cd piano-chords
 npm install
 npm start
 
-// or build
+// build
 npm run build
+
+// test
+npm test
+
+// e2e test
+// ensure that node process is running with "npm start"
+// then in another tab
+npm run testcafe
 ```
 
 

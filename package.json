@@ -17,7 +17,10 @@
     "start": "http-server src -p 8081 -o",
     "lint": "eslint src/js scripts",
     "nsp": "nsp check --output checkstyle",
-    "test": "npm run lint && npm run nsp",
+    "pretest": "npm run lint && npm run nsp",
+    "tape": "tape test/start.js | tap-spec",
+    "test": "npm run tape",
+    "testcafe": "testcafe nightmare test/e2e",
     "build": "npm test && node scripts/build",
     "reset": "node reset"
   },
@@ -40,6 +43,11 @@
     "postcss-cssnext": "2.x.x",
     "postcss-filter-plugins": "2.x.x",
     "postcss-nested": "2.x.x",
+    "supertest": "3.x.x",
+    "tap-spec": "4.x.x",
+    "tape": "4.x.x",
+    "testcafe": "0.x.x",
+    "testcafe-browser-provider-nightmare": "0.x.x",
     "uglify-js": "3.x.x"
   },
   "keywords": [
