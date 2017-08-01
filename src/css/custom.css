@@ -10,6 +10,18 @@ body {
   background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+header a i {
+  color: #fff;
+  font-size: 30px;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+
+header a i:hover {
+  color: #abf;
+}
+
 .main {
   max-width: 796px;
   margin: auto;
@@ -105,7 +117,7 @@ body {
   flex-grow: 1;
 }
 .info-board .right {
-  width: 100px;
+  width: 50px;
 }
 
 select {
@@ -126,10 +138,10 @@ select.big {
   display: inline-block;
   border-radius: 50%;
   line-height: 40px;
-  width: 60px;
+  width: 50px;
   margin: 5px 5px;
   font-weight: 800;
-  font-size: 18px;
+  font-size: 16px;
   color: #009;
   background-color: #ff9;
   user-select: none;

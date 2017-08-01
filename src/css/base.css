@@ -16,7 +16,8 @@ html, body {
 }
 
 html {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 body {
   display: flex;
