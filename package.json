@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.4",
   "name": "piano-chords",
   "description": "Simple tool for determining piano chords",
   "homepage": "https://techpush.github.io/piano-chords",
@@ -18,7 +18,7 @@
     "lint": "eslint src/js scripts",
     "nsp": "nsp check --output checkstyle",
     "test": "npm run lint && npm run nsp",
-    "build": "node scripts/build",
+    "build": "npm test && node scripts/build",
     "reset": "node reset"
   },
   "devDependencies": {
