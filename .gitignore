@@ -15,6 +15,7 @@ output
 
 storage
 src/vendor
+docs/vendor
 dist
 releases
 configs/env
@@ -22,3 +23,5 @@ configs/env
 yarn.lock
 coverage.lcov
 package-lock.json
+
+
