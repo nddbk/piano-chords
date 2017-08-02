@@ -1,11 +1,11 @@
 {
-  "version": "0.0.4",
+  "version": "0.0.5",
   "name": "piano-chords",
   "description": "Simple tool for determining piano chords",
   "homepage": "https://techpush.github.io/piano-chords",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ndaidong/piano-chords"
+    "url": "https://github.com/techpush/piano-chords"
   },
   "author": "@ndaidong",
   "main": "./index.js",
@@ -20,7 +20,7 @@
     "pretest": "npm run lint && npm run nsp",
     "tape": "tape test/start.js | tap-spec",
     "test": "npm run tape",
-    "testcafe": "testcafe nightmare test/e2e",
+    "test:e2e": "testcafe nightmare test/e2e",
     "build": "node scripts/build",
     "reset": "node reset"
   },
