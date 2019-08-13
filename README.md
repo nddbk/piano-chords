@@ -3,7 +3,7 @@ Simple tool for determining piano chords based on given scale.
 
 [![Piano Chords demo](https://i.ytimg.com/vi/ILuvPq7qkN8/maxresdefault.jpg)](https://www.youtube.com/watch?v=ILuvPq7qkN8)
 
-[Live app](http://ndaidong.info/piano-chords/)
+[Live app](https://ndaidong.github.io/piano-chords/)
 
 ## Why and how?
 
